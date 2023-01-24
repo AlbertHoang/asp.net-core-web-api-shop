@@ -1,4 +1,6 @@
-﻿using System.Text.Json.Serialization;
+﻿#nullable disable
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace HPlusSport.API.Models
 {
@@ -11,8 +13,9 @@ namespace HPlusSport.API.Models
         public decimal Price { get; set; }
         public bool IsAvailable { get; set; }
 
+        [Required]
         public int CategoryId { get; set; }
         [JsonIgnore]
-        public virtual Category Category { get; set; }
+        public virtual Category? Category { get; set; }
     }
 }
